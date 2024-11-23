@@ -1,17 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const togglers = document.querySelectorAll('[data-toggle]');
-  
-    togglers.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-         const selector = e.currentTarget.dataset.toggle
-         const block = document.querySelector(`${selector}`);
-        if (e.currentTarget.classList.contains('active')) {
-          block.style.maxHeight = '';
-        } else {
-          block.style.maxHeight = block.scrollHeight + 'px';
-        }
-          
-         e.currentTarget.classList.toggle('active')
-      })
-    })
-	})
+new Swiper('.testimonial-swiper', {
+  slidesPerView: 2,
+  spaceBetween: 30,
+  pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+  },
+  autoplay: {
+      delay: 3000,
+      disableOnInteraction: true,
+  },
+  breakpoints: {
+      768: {
+          slidesPerView: 2,
+      }
+  }
+});
